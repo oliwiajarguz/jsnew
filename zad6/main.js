@@ -1,4 +1,4 @@
-var jsonPracownicy = { 
+let jsonPracownicy = { 
     "pracownicy":[
         {"firstName": "Krystian", "lastName": "Dziopa"}, 
         {"firstName": "Anna", "lastName": "Szapiel"},
@@ -6,9 +6,7 @@ var jsonPracownicy = {
     ]
 };
 console.log(jsonPracownicy.pracownicy[0]);
-console.log(jsonPracownicy.pracownicy[1]);
-console.log(jsonPracownicy.pracownicy[2]);
 
-for (var i = 0; i < jsonPracownicy.pracownicy; i++){
-    console.log(json.pracownicy.lastName);
-}
+jsonPracownicy.pracownicy.forEach((element, index) => {
+    console.log(`imię: ${element.firstName}, nazwisko:${element.lastName}, index: ${index}`);   
+});
