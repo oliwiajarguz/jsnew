@@ -6,35 +6,30 @@ class Ksiazka {
     }
     opiszKsiazke() {
       if (this.read === true) {
-        console.log('Książka ma tytuł ' + this.nicknick + ',autorem jest ' + this.surn + ' i została przeczytana.');
+        return ('Książka ma tytuł ' + this.nicknick + ',autorem jest ' + this.surn + ' i została przeczytana.');
       } else {
-        console.log('Książka ma tytuł ' + this.nicknick + ',autorem jest ' + this.surn + ' i nie została przeczytana.');
+       return ('Książka ma tytuł ' + this.nicknick + ',autorem jest ' + this.surn + ' i nie została przeczytana.');
       }
     }
   
   }
   
-  var wiedzmin = new Ksiazka('Wiedźmin', "Andrzej Sapkowski", true);
-  var saint = new Ksiazka('Mały Ksiązę', 'Antoine saint exupery', true);
-  var krzyzacy = new Ksiazka('Krzyzacy', 'Henryk Sienkiewicz', false);
+  let wiedzmin = new Ksiazka('Wiedźmin', "Andrzej Sapkowski", true);
+  let saint = new Ksiazka('Mały Ksiązę', 'Antoine saint exupery', true);
+  let krzyzacy = new Ksiazka('Krzyzacy', 'Henryk Sienkiewicz', false);
   
-  console.log(wiedzmin);
-  wiedzmin.opiszKsiazke();
-  console.log(saint);
-  saint.opiszKsiazke();
-  console.log(krzyzacy);
-  krzyzacy.opiszKsiazke();
   
-  var tablicaGlobalna = [wiedzmin, saint, krzyzacy];
-  console.log(tablicaGlobalna);
+  let tablicaGlobalna = [wiedzmin, saint, krzyzacy];
 
-  function iloscPrzeczytanych(tablicaGlobalna) {
-    var sum = 0;
-    for (var i = 0; i < tablicaGlobalna.length; i++) {
-      if (tablicaGlobalna[i].read) {
+  function iloscPrzeczytanych(tablica) {
+    let sum = 0;
+    for (let i = 0; i < tablica.length; i++) {
+    console.log(tablica[i].opiszKsiazke());
+      if (tablica[i].read) {
         sum++;
       }
     }
     return sum;
     
   }
+  console.log(iloscPrzeczytanych(tablicaGlobalna));
